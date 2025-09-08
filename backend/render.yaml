@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: maghreb2europe-backend
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"

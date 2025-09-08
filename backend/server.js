@@ -1,15 +1,14 @@
+// backend/server.js
 const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
+// Render يوفر PORT في المتغيرات البيئية
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("Maghreb2Europe Backend Running...");
+  res.json({ message: "Backend is running successfully 🚀" });
 });
 
-app.listen(PORT, () => console.log("Server started on port", PORT));
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
